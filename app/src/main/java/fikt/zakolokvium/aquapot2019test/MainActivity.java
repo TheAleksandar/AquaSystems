@@ -27,6 +27,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button buton;
     private SignInButton signIn;
     private Button signOut;
     public static final int RC_SIGN_IN = 1;
@@ -40,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        buton = (Button) findViewById(R.id.button);
+        buton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSystemGui();
+            }
+        });
         signIn = (SignInButton)findViewById(R.id.sign_in_button);
         signOut = (Button) findViewById(R.id.sign_out);
         mAuth = FirebaseAuth.getInstance();
@@ -96,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-        Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
+        Log.d(TAG, "fire-base AuthWithGoogle:" + acct.getId());
 
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
@@ -120,6 +128,11 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    public void openSystemGui()
+    {
+       Intent intent=new Intent(this,GuiAquaPot.class);
+        startActivity(intent);
+    }
     private void updateUI(FirebaseUser user) {
 
         signOut.setVisibility(View.VISIBLE);
@@ -141,4 +154,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void openSystemGui(View view) {
+    }
 }
