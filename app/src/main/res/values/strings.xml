@@ -5,6 +5,6 @@
     <string name="MinHumidity">Set min-Humidity %:</string>
     <string name="WaterLevel">Water Level state:</string>
     <string name="ButtonOpen">Gui View</string>
-
+    <string name="SignOut">Sign Out</string>
 
 </resources>

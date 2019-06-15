@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mAuth.signOut(); //get signed out
                 signOut.setVisibility(View.GONE);
+                signIn.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -136,6 +137,9 @@ public class MainActivity extends AppCompatActivity {
     private void updateUI(FirebaseUser user) {
 
         signOut.setVisibility(View.VISIBLE);
+        buton.setVisibility(View.VISIBLE);
+        signIn.setVisibility(View.GONE);
+
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if (acct != null) {
