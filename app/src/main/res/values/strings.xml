@@ -6,5 +6,6 @@
     <string name="WaterLevel">Water Level state:</string>
     <string name="ButtonOpen">Gui View</string>
     <string name="SignOut">Sign Out</string>
+    <string name="showHumidity">0%</string>
 
 </resources>
